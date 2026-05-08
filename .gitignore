@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Data — too large for GitHub
+*.hea
+*.dat
+ptb-xl/
+records500/
+ptbxl_database.csv
+
+# Model checkpoints — too large
+*.pt
+*.pth
+checkpoints/
+training_checkpoints/
+
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
