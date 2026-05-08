@@ -47,7 +47,7 @@ Deep ECG classifiers routinely achieve high benchmark accuracy by
 latching on to amplitude statistics and recording-level shortcuts
 rather than the localised wave morphology that cardiologists actually
 inspect. This paper works through the problem in three stages on
-PTB-XL, restricted to Lead~II and five diagnostic superclasses. We
+PTB-XL, restricted to Leads~ I, II, and VI, and five diagnostic superclasses. We
 first establish a 1D-ResNet baseline with Butterworth-filtered inputs
 and measure saliency quality through a Morphological Alignment Score
 (MAS) computed against NeuroKit2-derived P/QRS/T boundaries. The
@@ -175,8 +175,8 @@ warping.
 \subsection{Dataset and Evaluation Protocol}
 
 All experiments use PTB-XL~\cite{strodthoff2021}, a dataset of
-21,799 10-second 12-lead recordings at 500\,Hz. We restrict to Lead~II
-(index~1) and the five diagnostic superclasses: NORM, MI, STTC, CD,
+21,799 10-second 12-lead recordings at 500\,Hz. We restrict to Lead~I, II and IV
+(indices~0, 1 and 6) and the five diagnostic superclasses: NORM, MI, STTC, CD,
 and HYP. Table~\ref{tab:dataset} shows the class distribution.
 
 \begin{table}[h!]
@@ -745,7 +745,7 @@ alignment in a measurable way, with the Conduction Disturbance class
 showing the clearest gain. The classification cost is negligible.
 
 Several limitations constrain these findings. The experiment is
-restricted to single-lead input in Tasks~4 and~5, which limits the
+restricted to three-lead input in Tasks~4 and~5, which limits the
 clinical scope. The physiological priors are defined by fixed offsets
 from R-peaks, so records with irregular heart rates or pathological
 conduction delays will receive noisy supervision. The MAS metrics
@@ -760,7 +760,7 @@ pretraining to push morphologically distinct classes further apart in
 feature space. ProtoECGNet~\cite{sethi2025} defines the ceiling for
 intrinsic explainability on this dataset; closing the gap between
 alignment-supervised models and prototype-based reasoning is the
-most natural next step.
+most natural next step. Furthermore, for greater appeal medical trust and safety standards, we plan on validating the learnt model on various datasets such as the MIT-BIH to ensure that the model is data-agnostic.
 
 %--------------------------------------------------------------------
 \clearpage
